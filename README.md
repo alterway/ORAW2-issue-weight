@@ -1,4 +1,4 @@
-# ORAW2_Issue-weight
+# ORAW2 Issue weight
 
 This repository features two services which take a french issue report and predict it's priority.
 
