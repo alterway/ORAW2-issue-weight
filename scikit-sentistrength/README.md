@@ -1,12 +1,26 @@
-# ORAW2_Issue-weight
+# ORAW2 issue weight
 
 This repository features a regressor capable to predict the priority of french issue reports by giving it a weight.
 
 This service was created as a result of the OpenReq project funded by the European Union Horizon 2020 Research and Innovation programme under grant agreement No 732463.
 
-## usage
+##  setup
 
-\[WIP]
+To train a model you need a csv file with 4 columns.
+
+- issue_train.csv
+  - `subject` The subject of the issue
+  - `description` The body of the issue
+  - `tracker` A categorical type of the issue
+  - `urgence` A categorical urgency of the value
+
+Then you can train a model:
+
+```bash
+python3 -c "from classifier import train; train('issue')
+```
+
+##  usage
 
 The swagger api definition can be found [here](TODO).
 
@@ -20,13 +34,13 @@ and returning an object with the keys:
 - weight integer, the higher is the most urgent
 - stance integer, the higher is the more positive
 
-## Technologies
+##  Technologies
 
 The regressor is coded for python 3.5+, we recommand running this project via docker.
 
 The regressor is based on [scikit-learn](scikit-learn.org) and the user stance if provided by [SentiStrength](http://sentistrength.wlv.ac.uk).
 
-## Build & Run
+##  Build & Run
 
 [SentiStrength](http://sentistrength.wlv.ac.uk) Java is required to build the image, the jar file must be placed at the root of the project. To acquire SentiStrength please refer to SentiStrength website.
 
